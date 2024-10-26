@@ -1,0 +1,50 @@
+Library Api
+
+A simple API service for an online library system. The system should allow users to manage books and authors, including CRUD operations for both entities. Additionally, the system should include data filtering, background task processing, signals, and database query optimization. Implement caching where necessary to improve performance.
+
+Technology used:
+Django
+django Rest Framework
+Django filter
+Celery
+Redis
+SQlite
+
+Setup Instructions:
+git clone https://github.com/adnantushar/Library_api.git
+cd Library_api
+
+setup virtual environment
+python3 -m venv venv
+venv\Scripts\activate
+
+Install Requirements
+pip install -r requirements.txt
+
+Setup Redis
+install redis
+
+Setup Django
+python mange.py makemigrations
+python mange.py migrate
+
+create superuser
+python manage.py createsuperuser
+
+python manage.py runserver
+
+Confige Celery
+run commnand in terminal
+celery -A library_api worker -l info
+start salary beat
+celery -A library_api beat -l info
+
+Testing Api Endpoints:
+Create author: 
+POST http://127.0.0.1:8000/api/authors/
+Get author: 
+GET http://127.0.0.1:8000/api/authors/
+Create Book: 
+POST http://127.0.0.1:8000/api/authors/
+Get book: 
+GET http://127.0.0.1:8000/api/authors/
